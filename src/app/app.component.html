@@ -1,4 +1,4 @@
-<body class="back-ground">
+<div class="mybackground">
     <mat-card class="center">    
         <form [formGroup]="sampleForm" (ngSubmit)="onConfirm()">
             
@@ -6,9 +6,9 @@
             <mat-icon   class="interactiveicon" color="primary" matSuffix (click)="clearAll()" >close</mat-icon>
             <span class="tooltiptext">clear form</span>
             </div>
-
-            <mat-card-title><em>Change Password</em></mat-card-title><br>           
-
+    
+            <mat-card-title><em>CHANGE PASSWORD</em></mat-card-title><br>           
+    
             <div>
                 <mat-form-field appearance="outline" class="long-box">
                     <mat-label><strong>User Name</strong></mat-label>
@@ -22,7 +22,7 @@
                     <input matInput placeholder="email" formControlName="email">
                 </mat-form-field>
             </div>
-
+    
             <div>
                 <app-child-component [passcodecontrol]="password">
                      <mat-label><strong>Password</strong></mat-label>
@@ -30,7 +30,7 @@
                 <mat-error *ngIf="password.hasError('required') && password.touched">This is a required field</mat-error>
                 <mat-error *ngIf="password.hasError('minlength') && password.touched">type atleast 8 characters</mat-error>
             </div>
-
+    
             <div>
                 <app-child-component [passcodecontrol]="confirmpassword">
                     <mat-label><strong>Password</strong></mat-label>
@@ -39,8 +39,8 @@
                 <mat-error *ngIf="confirmpassword.hasError('minlength') && confirmpassword.touched">type atleast 8 characters</mat-error>
                 <mat-error *ngIf="sampleForm.errors?.['mismatch'] && confirmpassword.touched">please make sure the passwords match</mat-error>
             </div>
-
+    
             <button mat-raised-button color="primary" [disabled]="sampleForm.invalid">Confirm</button>
         </form>
     </mat-card>
-</body>
+</div>
